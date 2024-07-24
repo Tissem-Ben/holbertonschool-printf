@@ -13,6 +13,8 @@ void get_conv_func(char directive, va_list args, int *count)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_pourcentage},
+		{"i", print_integer},
+		{"d", print_integer},
 		{NULL, NULL}
 	};
 	int i = 0;
