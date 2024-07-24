@@ -3,13 +3,14 @@
 #include <unistd.h>
 
 /**
- * _printf - produces output according 
+ * _printf - produces output according
  * @format: a character string containing the format string.
  *
  * Return: the number of characters printed.
  */
 
 int _printf(const char *format, ...)
+{
 
 	int count = 0;
 	va_list args;
@@ -18,13 +19,13 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	while (format && format[i])
-{
+	{
 	if (format[i] == '%')
 	{
 		i++;
 		if (format[i])
 		{
-		get_conv_func(format[i], args,&count);
+		get_conv_func(format[i], args, &count);
 		}
 	}
 	else
@@ -34,5 +35,5 @@ int _printf(const char *format, ...)
 	i++;
 }
 va_end(args);
-return count;
+return (count);
 }
