@@ -1,0 +1,44 @@
+.TH _PRINTF 1 "July, 2024" "version 1.0" "user command"
+
+.SH \fB\fUNAME\fR\fR
+\fB_printf\fP - print formatted data to the standard output.
+
+.SH \fB\fUSYNOPSIS\fR\fR
+.P
+.B _printf(const char *format, ...);
+
+.SH \fB\fUDESCRIPTION\fR\fR
+.P
+The _printf project is a simplified implementation of the printf function in the C language. It provides a user-friendly way to display formatted text in the console. This simplified version supports a subset of printf format specifiers.The function declarations in this file are function prototypes. The definitions of these functions must be implemented in a corresponding source file.
+
+.SH \fB\fUOPTIONS\fR\fR
+.P
+In our project, we have incorporated several options that handle the following functions:
+\fI%\fR prints a literal '%' character.
+\fI%s\fR prints a string.
+\fI%c\fR prints a single characte.
+\fI%d\fR prints a decimal number.
+\fI%i\fR prints an integer.
+
+.SH \fB\fUEXEMPLES\fR\fR
+.P
+Here are some examples that illustrate our function
+_printf("%c is fun", 'C');
+STDOUT output: "C is fun".
+
+_printf("%s", "C is fun");
+STDOUT output: "C is fun".
+
+_printf("C is top %d", "1");
+STDOUT output: "C is top 1".
+
+_printf("C is top %i", "1");
+STDOUT output: "C is top 1". 
+
+.SH \fB\fURÉFÉRENCES\fR\fR
+.P
+https://github.com/Tissem-Ben/holbertonschool-printf.git
+
+.SH \fB\fUAUTHORS\fR\fR
+.P
+.B Writted by BENDAHMA Ibtissem and Oussama FERHAT
