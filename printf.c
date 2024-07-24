@@ -3,69 +3,36 @@
 #include <unistd.h>
 
 /**
- * _putchar - writes a character to stdout
- * @c: the character to print
+ * _printf - produces output according 
+ * @format: a character string containing the format string.
  *
- * Return:
+ * Return: the number of characters printed.
  */
 
-int _putchar(char c)
-{
-	return write(1, &c, 1);
-}
 int _printf(const char *format, ...)
 
 	int count = 0;
 	va_list args;
+	int i = 0;
+
 	va_start(args, format);
-while (*format)
+
+	while (format && format[i])
 {
-	if (*format == '%')
+	if (format[i] == '%')
 	{
-		format++;
-		if (*format == 'c')
+		i++;
+		if (format[i])
 		{
-			char c = va_arg(args, int);
-			count += _putchar(c);
-		}
-		else if (*format == 's')
-		{
-			char *str = va_arg(args, char*);
-			while (*str)
-			{
-				count += _putchar(*str++);
-			}
-		}
-		else if (*format == '%')
-		{
-			count += _putchar('%');
-		}
-		else
-		{
-			count += _putchar('%');
-			count += _putchar(*format);
+		get_conv_func(format[i], args,&count);
 		}
 	}
 	else
 	{
-		count += _putchar(*format);
+		count += _putchar(format[i]);
 	}
-		format++;
-	}
-	va_end(args);
-	return count;
-	}
-
-	/**
-	 * _putchar - writes a character to stdout.
-	 * @c: the character to print.
-	 *
-	 * Return:
-	 */
-	int _putchar(char c)
-	{
-		return write(1, &c, 1);
-	}
-
-
-
+	i++;
+}
+va_end(args);
+return count;
+}
