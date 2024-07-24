@@ -50,3 +50,45 @@ void print_pourcentage(va_list args, int *count)
 	putchar('%');
 	(*count)++;
 }
+/**
+ * print_integer - Converts an integer to a string of characters
+ * @args: Variable argument list containing the integer to convert
+ * @count: Pointer to an integer to track the number of characters
+ * Description:
+ * This function takes a variable argument list containing an integer,
+ * converts it to a string of characters, and increments the character
+ * count. It handles negative numbers and prints them in the correct
+ * order. The converted string is then printed.
+ * The maximum length of the converted string is assumed to be 20
+ * characters.
+ */
+void print_integer(va_list args, int *count)
+{
+	long int number = va_arg(args, int);
+	long int divisor, digit, subtractNum;
+	long int divisorValue = 1;
+
+	if (number < 0)
+	{
+		putchar('-');
+		(*count)++;
+		(number) = -number;
+	}
+	divisor = number;
+	while (divisor / 10 != 0)
+	{
+		divisor /= 10;
+		divisorValue *= 10;
+	}
+	while (divisorValue >= 10)
+	{
+		digit = number / divisorValue;
+		subtractNum = digit * divisorValue;
+		putchar(digit + '0');
+		number = number - subtractNum;
+		divisorValue /= 10;
+		(*count)++;
+	}
+	putchar (number + '0');
+	(*count)++;
+}
