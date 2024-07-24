@@ -1,39 +1,40 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
 
 /**
- * _printf - produces output according
- * @format: a character string containing the format string.
- *
- * Return: the number of characters printed.
+ * _printf - Produces output according to a format
+ * @format: A character string.
+ * Desctioption: This function produces output according to a format.
+ * The format string is composed of zero or more directives.
+ * Return: The number of characters printed or -1 if an error occurs.
  */
 
 int _printf(const char *format, ...)
 {
 
-	int count = 0;
 	va_list args;
+	int count = 0;
 	int i = 0;
 
 	va_start(args, format);
 
-	while (format && format[i])
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
-	if (format[i] == '%')
+		return (-1);
+	}
+
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		i++;
-		if (format[i])
+		if (format[i] != '%')
 		{
-		get_conv_func(format[i], args, &count);
+			putchar(format[i]);
+			count++;
+		}
+		else
+		{
+			i++;
+			get_conv_func(format[i], args, &count);
 		}
 	}
-	else
-	{
-		count += _putchar(format[i]);
-	}
-	i++;
-}
-va_end(args);
-return (count);
+	va_end(args);
+	return (count);
 }
