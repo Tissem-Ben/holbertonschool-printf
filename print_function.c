@@ -1,11 +1,20 @@
 #include "main.h"
 /**
+<<<<<<< HEAD
  *  * print_char - Entry point
  *   * @args: The va_list containing the character to print
  *    * @count: Pointer to an integer to count the number of characters printed
  *     * Description: This function prints a character
  *      * Return: Always 0.
  *       */
+=======
+ * print_char - Entry point
+ * @args: The va_list containing the character to print
+ * @count: Pointer to an integer to count the number of characters printed
+ * Description: This function prints a character
+ * Return: Always 0.
+ */
+>>>>>>> oussama
 void print_char(va_list args, int *count)
 {
 	char caractere = va_arg(args, int);
@@ -14,12 +23,21 @@ void print_char(va_list args, int *count)
 	(*count)++;
 }
 /**
+<<<<<<< HEAD
  *  * print_string - Entry point
  *   * @args: The va_list containing the string to print
  *    * @count: Pointer to an integer to count the number of characters printed
  *     * Description: This function prints a string
  *      * Return: Always 0
  *       */
+=======
+ * print_string - Entry point
+ * @args: The va_list containing the string to print
+ * @count: Pointer to an integer to count the number of characters printed
+ * Description: This function prints a string
+ * Return: Always 0
+ */
+>>>>>>> oussama
 void print_string(va_list args, int *count)
 {
 	char *string = va_arg(args, char *);
@@ -38,12 +56,21 @@ void print_string(va_list args, int *count)
 }
 
 /**
+<<<<<<< HEAD
  *  * print_pourcentage - Entry point
  *   * @count: Pointer to an integer to count the number of characters printed
  *    * @args: The va_list containing the string to print
  *     * Description: This function prints a percentage character ("%").
  *      * Return: Always 0
  *       */
+=======
+ * print_pourcentage - Entry point
+ * @count: Pointer to an integer to count the number of characters printed
+ * @args: The va_list containing the string to print
+ * Description: This function prints a percentage character ("%").
+ * Return: Always 0
+ */
+>>>>>>> oussama
 void print_pourcentage(va_list args, int *count)
 {
 	(void)args;
@@ -51,6 +78,7 @@ void print_pourcentage(va_list args, int *count)
 	(*count)++;
 }
 /**
+<<<<<<< HEAD
  *  * print_integer - Converts an integer to a string of characters
  *   * @args: Variable argument list containing the integer to convert
  *    * @count: Pointer to an integer to track the number of characters
@@ -62,6 +90,19 @@ void print_pourcentage(va_list args, int *count)
  *          * The maximum length of the converted string is assumed to be 20
  *           * characters.
  *            */
+=======
+ * print_integer - Converts an integer to a string of characters
+ * @args: Variable argument list containing the integer to convert
+ * @count: Pointer to an integer to track the number of characters
+ * Description:
+ * This function takes a variable argument list containing an integer,
+ * converts it to a string of characters, and increments the character
+ * count. It handles negative numbers and prints them in the correct
+ * order. The converted string is then printed.
+ * The maximum length of the converted string is assumed to be 20
+ * characters.
+ */
+>>>>>>> oussama
 void print_integer(va_list args, int *count)
 {
 	long int number = va_arg(args, int);
