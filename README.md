@@ -57,7 +57,7 @@ conv_integer : handles the conversion of %i who prints an integer.
 
 
 # Usage
-here is an example of using our function
+Here is an example of using our function
 ```
 #include "main.h"
 
